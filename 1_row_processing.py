@@ -5,7 +5,9 @@ file = open("raw_data.txt", "r")
 
 datas = file.read().split("\n")
 
-header = ["SBD", "tên", "dd", "mm", "yy", "toán", "ngữ văn", "khxh", "khtn", "lịch sử", "địa lí", "gdcd", "sinh học", "vật lí", "hoá học", "tiếng anh"]
+header = ["SBD", "tên", "dd", "mm", "yy", "toán", "ngữ văn", "khxh", "khtn", "lịch sử", "địa lí", "gdcd", "sinh học", "vật lí", "hóa học", "tiếng anh"]
+subjects = header[5:]
+
 with open("clean_data.txt", encoding="utf8", mode="w", newline = "") as file_csv:
 	writer = csv.writer(file_csv)
 	writer.writerow(header)
@@ -52,7 +54,6 @@ for data in datas:
 	scores = data[9]
 
 
-
 	#fixing unicode
 	chars = []
 	codes = []
@@ -92,9 +93,9 @@ for data in datas:
 
 	data = [sbd_str, name.title(), int(dd), int(mm), int(yy)]
 
-	for subjects in ["toán", "ngữ văn", "khxh", "khtn", "lịch sử", "địa lí", "gdcd", "sinh học", "vật lí", "hoá học", "tiếng anh"]:
-		if subjects in scores_list:
-			data.append(float(scores_list[scores_list.index(subjects) + 1]))
+	for subject in subjects:
+		if subject in scores_list:
+			data.append(float(scores_list[scores_list.index(subject) + 1]))
 		else:
 			data.append(-1)
 
