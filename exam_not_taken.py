@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 
-with open("clean_data.csv", mode = "r") as file:
+with open("clean_data.csv",encoding="utf8", mode = "r") as file:
 	data = file.read().split("\n")
 
 #take header

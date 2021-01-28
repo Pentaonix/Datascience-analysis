@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt; plt.rcdefaults()
 import numpy as np
 
-with open("clean_data.csv", mode = "r") as file:
+with open("clean_data.csv",encoding="utf8", mode = "r") as file:
 	data = file.read().split("\n")
 
 #take header
@@ -41,7 +41,7 @@ num_of_exams_taken_per = [0,0,0,0,0,0,0,0,0,0]
 for i in range(len(num_of_exams_taken)):
 	num_of_exams_taken_per[i] = round(num_of_exams_taken[i]*100/total,4)
 
-label = ["0 mon", "1 mon", "2 mon", "3 mon", "4 mon", "5 mon", "6 mon", "7 mon", "8 mon", "9 mon", "10 mon", "11 mon"]
+label = ["0 mon", "1 mon", "2 mon", "3 mon", "4 mon", "5 mon", "6 mon", "7 mon", "8 mon", "9 mon"]
 
 
 fig, ax = plt.subplots(figsize=(6, 3), subplot_kw=dict(aspect="equal"))
