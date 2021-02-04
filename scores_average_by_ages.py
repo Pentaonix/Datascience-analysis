@@ -49,9 +49,9 @@ for i in range(len(numbers_of_students_by_age_group)):
 
 for i in range(len(numbers_of_students_by_age_group)):
 	average_score_of_a_student_by_age[i] = average_score_of_a_student_by_age[i]*70000/10
-print(numbers_of_students_by_age_group)
-print(sum_score_of_a_student_by_age)
-print(average_score_of_a_student_by_age)
+# print(numbers_of_students_by_age_group)
+# print(sum_score_of_a_student_by_age)
+# print(average_score_of_a_student_by_age)
 label = ["17", "18", "19", "20", "21", "22", "23", "24", "25", "26", ">26"]
 
 #barchart
