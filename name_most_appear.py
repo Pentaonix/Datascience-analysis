@@ -19,8 +19,22 @@ students.pop()
 total_students = len(students)
 
 #last name list
-name_list - [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+name_list = []
+name_count = []
+
+for i in range(len(students)):
+    students[i] = students[i].split(',')
 
 for student in students:
-    student = student.split(',')
-    print(student[1])
+    student = student[1].split(' ')
+    last_name = student[0]
+    print(last_name)
+    if last_name not in name_list:
+        name_list.append(last_name)
+        name_count.append(0)
+        #get 2 value with same index
+        name_count[name_list.index(last_name)] += 1
+    else:
+        name_count[name_list.index(last_name)] += 1
+print(name_list, name_count)
+ 
